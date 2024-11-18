@@ -1,0 +1,503 @@
+/* input fields styles */
+.formPassIcon {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.inputField {
+    color: var(--primary-text) !important;
+}
+
+.inputField input[type="date"] {
+    position: relative;
+
+
+    &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+
+    &::before {
+        content: "\1F4C5";
+        font-size: 18px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+}
+
+
+/* custom button style */
+/* default button style */
+.defaultBtn {
+    width: 100%;
+    background-color: var(--primary-button-background) !important;
+    color: var(--primary-button-text) !important;
+    font-size: 17px !important;
+    text-transform: capitalize !important;
+    /* font-weight: 700 !important; */
+    border-radius: 5px !important;
+}
+
+
+.cusBtnAni {
+    transition: all 0.2s ease-in-out !important;
+}
+
+.cusBtnAni:active {
+    transform: scale(0.70) !important;
+}
+
+/* Alert box styles */
+.swal2CustomContainer {
+    z-index: 2000 !important;
+    box-shadow: 0px 4px 8px rgb(255, 3, 3) !important;
+    /* Example box-shadow */
+}
+
+.confirmButton {
+    background: var(--primary-button-background) !important;
+    color: var(--primary-button-text) !important;
+}
+
+.confirmButton1 {
+    background: #d33 !important;
+
+}
+
+/* Export button */
+.iconBtnCon {
+    width: 40px;
+    height: 40px;
+
+    & .iconBtn {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px !important;
+        background-color: var(--primary-button-background) !important;
+    }
+
+    & .btnIcon {
+        color: var(--primary-button-text) !important;
+        font-size: 25px !important;
+        font-weight: 800 !important;
+    }
+
+    & .rotateIcon180deg {
+        transform: rotate(180deg);
+    }
+
+}
+
+/* custom dialog box styles */
+.cusDialogTitleCon {
+    background-color: var(--dialog-header-background);
+    display: flex;
+    color: var(--dialog-header-text) !important;
+    padding: 10px 5px !important;
+    margin: 0 !important;
+    justify-content: space-between;
+
+    & .cusDialogTitle {
+        display: flex;
+        gap: 20px !important;
+        align-items: center;
+        font-size: 25px !important;
+    }
+
+    & .icon {
+        color: var(--dialog-header-text);
+    }
+}
+
+.cusDialogContent {
+    background-color: var(--dialog-content-background);
+    color: var(--dialog-content-text);
+    padding: 10px !important;
+}
+
+
+/* form select drop down styles */
+.formLabel {
+    margin-bottom: 10px;
+}
+
+/* Gender filter styles */
+.genderFilter {
+    display: flex;
+    gap: 5px;
+}
+
+.iconButton {
+    background-color: var(--gender-button-background) !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 5px 2px var(--box-shadow-color);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.maleButton {
+    transition: all 0.3s ease-in;
+    color: var(--gender-male) !important;
+
+    &.active {
+        background-color: var(--gender-male-active) !important;
+        color: var(--primary-white) !important;
+    }
+}
+
+.femaleButton {
+    transition: all 0.3s ease-in;
+    color: var(--gender-female) !important;
+
+    &.active {
+        background-color: var(--gender-female-active) !important;
+        color: var(--primary-white) !important;
+    }
+}
+
+/* date filter styles */
+.dateFilterCon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.imgContainer {
+    display: flex;
+    align-items: center;
+    /* gap: 5px; */
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 5px;
+}
+
+.dateFilterImg {
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 1;
+    transform: translateX(0);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 5.5px !important;
+    background-color: var(--gender-button-background);
+    box-shadow: 0 0 5px 2px var(--box-shadow-color);
+    position: relative;
+}
+
+.dateFilterImg.active {
+    background-color: var(--date-filter-highlight);
+}
+
+.dateFilterImgSlideIn {
+    transform: translateX(-150%);
+    opacity: 0;
+}
+
+.customDateCon {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    animation: slideIn 0.5s forwards, expand 0.5s forwards;
+    min-width: 230px !important;
+}
+
+.customDateConClosing {
+    animation: slideOut 0.5s forwards reverse, collapse 0.5s forwards reverse;
+}
+
+.datePicker {
+    width: 100% !important;
+}
+
+.cancelButton {
+    background-color: var(--primary-white) !important;
+    padding: 0 !important;
+    box-shadow: 0 0 5px 2px var(--box-shadow-color);
+
+    &>* {
+        color: var(--primary-black) !important;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes expand {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes collapse {
+    from {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+}
+
+/* grid table styles  */
+.gridTableIcon {
+    color: var(--primary-text);
+}
+
+.gridTableDeleteBtn {
+    width: fit-content !important;
+    background-color: var(--danger-background) !important;
+    color: var(--danger-text) !important;
+    box-shadow: 0 0 5px var(--box-shadow-color) !important;
+    text-transform: capitalize !important;
+    font-weight: 700 !important;
+    /* font-size: 18px !important; */
+    padding: 5px 20px !important;
+
+    & span {
+        text-transform: uppercase !important;
+    }
+}
+
+.gridTableDeleteCon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.customDatePicker input {
+    font-size: 12px !important;
+}
+
+
+/* excel import dialog styles */
+.CusEIDHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--dialog-header-background);
+    color: var(--dialog-header-text);
+    align-items: center;
+    font-size: 25px !important;
+    font-weight: 500;
+    padding: 5px 10px;
+
+    & .iconBtn {
+        color: var(--dialog-header-text);
+        font-size: 25px !important;
+        font-weight: 600;
+    }
+
+}
+
+.CusEIDSampleExcelCon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.CusEIDDropCon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px 0px;
+    gap: 10px;
+    border: 2px dashed var(--border-color);
+    border-radius: 5px;
+    position: relative;
+
+    &:hover,
+    &.dragover {
+        opacity: 0.6;
+    }
+
+    & input {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    & p {
+        font-size: 20px;
+    }
+
+    & .uploadIcon {
+        font-size: 28px;
+    }
+}
+
+
+.CusEIDTemplateBtn {
+    padding: 7px !important;
+    width: 130px;
+    display: flex !important;
+    align-items: center !important;
+    color: var(--primary-text) !important;
+    background-color: transparent !important;
+    text-transform: capitalize !important;
+    box-shadow: 0 0 4px 1px var(--box-shadow-color);
+    font-weight: 300 !important;
+    border-radius: 8px !important;
+
+}
+
+.CusEIDTemplateIcon {
+    color: var(--primary-success) !important;
+    font-size: 25px !important;
+    margin-top: -5px !important;
+}
+
+.CusEIDContent {
+    width: 500px;
+}
+
+.CusEIDFooterCon {
+    background-color: var(--secondary-background);
+    border-top: 1px solid var(--border-color);
+}
+
+.CusEIDFooterBtnCon {
+    display: flex;
+    gap: 20px;
+}
+
+.CusEIDButton {
+    width: 100%;
+    background-color: var(--primary-button-background) !important;
+    color: var(--primary-button-text) !important;
+    font-size: 17px !important;
+    text-transform: capitalize !important;
+    border-radius: 5px !important;
+    padding: 5px 20px !important;
+
+    &:nth-child(1) {
+        background-color: var(--secondary-button-background) !important;
+        color: var(--secondary-button-text) !important;
+    }
+}
+
+.CusEIDFileLists {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CusEIDFileList {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--primary-info);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: var(--primary-black);
+
+}
+
+.CusEIDIconBtn,
+.CusEIDRemoveBtn {
+    white-space: nowrap;
+
+    & .icon {
+        font-size: 25px;
+    }
+}
+
+.CusEIDFileName {
+    flex-grow: 1;
+    width: 320px;
+
+    & p {
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.CusEIDRemoveBtn {
+    & .icon {
+        color: var(--danger-text);
+    }
+}
+
+/* mobile responsive */
+@media only screen and (max-width: 750px) {
+
+    /* default button style */
+    .defaultBtn {
+        font-size: 15px !important;
+    }
+
+    /* excel import dialog box */
+    .CusEIDContent {
+        width: 100%;
+    }
+
+    .CusEIDFileName {
+        width: 50%;
+    }
+
+    .CusEIDFileList {
+        width: 100%;
+    }
+
+    .CusEIDDropCon {
+
+
+        & p {
+            font-size: 17px;
+        }
+
+        & .uploadIcon {
+            font-size: 25px;
+        }
+    }
+}

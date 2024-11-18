@@ -1,0 +1,10 @@
+:root{
+  background-color: #dedede;
+  font-size: 19px;
+  --primary-button-background: #1976d2;
+  --primary-button-text:#ffffff;
+  --secondary-background: #FAFAFB;
+  --secondary-text: #A0ABBB;
+  --primary-appbar-color:#001628;
+  --primary-table-header:#fafafa;
+}
